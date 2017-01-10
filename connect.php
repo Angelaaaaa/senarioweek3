@@ -9,6 +9,5 @@
     if(!$con){
         die("can't connect".mysql_error());//如果链接失败输出错误
     }
-    
     mysql_select_db('security',$con);//选择数据库（我的是test）
 ?>
