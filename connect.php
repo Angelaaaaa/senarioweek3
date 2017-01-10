@@ -1,13 +1,13 @@
 <?php
 
 
-    $server="localhost:8889";//主机
-    $db_username="root";//你的数据库用户名
-    $db_password="root";//你的数据库密码
+    $server="localhost:8889";
+    $db_username="root";
+    $db_password="root";
 
-    $con = mysql_connect($server,$db_username,$db_password);//链接数据库
+    $con = mysql_connect($server,$db_username,$db_password);//connect to DB
     if(!$con){
-        die("can't connect".mysql_error());//如果链接失败输出错误
+        die("can't connect".mysql_error());//if fail to connect
     }
-    mysql_select_db('security',$con);//选择数据库（我的是test）
+    mysql_select_db('security',$con);//Select DB, 'security' is the name of ours
 ?>

@@ -3,19 +3,19 @@
 
     if(!isset($_POST['submit'])){
         exit("error");
-    }//判断是否有submit操作
-    $name=$_POST['name'];//post获取表单里的name
-    $password=$_POST['password'];//post获取表单里的password
+    }//if any submit actions
+    $name=$_POST['name'];
+    $password=$_POST['password'];
 
-    include('connect.php');//链接数据库
+    include('connect.php');//connect to DB
   
-    $q="insert into user(id,loginname,password,username,iconURL,pageURL,color,snippet) values (null,'$name','$password','','','','','')";//向数据库插入表单传来的值的sql
-    $result=mysql_query($q,$con);//执行sql
+    $q="insert into user(id,loginname,password,username,iconURL,pageURL,color,snippet) values (null,'$name','$password','','','','','')";//insert sql into DB 
+    $result=mysql_query($q,$con);//execute sql
     
     if (!$result){
-        die('Error: ' . mpysql_error());//如果sql执行失败输出错误
+        die('Error: ' . mpysql_error());//if failed
     }else{
-        // echo "registration successful";//成功输出注册成功
+        // echo "registration successful";//
         header("refresh:0;url=login.html");
          echo "<script type=\"text/javascript\">".
         "alert('sign up successfully');".
@@ -24,6 +24,6 @@
 
     
 
-    mysql_close($con);//关闭数据库
+    mysql_close($con);//close
 
 ?>
