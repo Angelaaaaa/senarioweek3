@@ -2,13 +2,13 @@
     header("Content-Type: text/html; charset=utf8");
     if(!isset($_POST["submit"])){
         exit("error");
-    }//检测是否有submit操作 
+    }//Testing existance of submit action 
 
-    include('connect.php');//链接数据库
-    $name = $_POST['name'];//post获得用户名表单值
-    $passowrd = $_POST['password'];//post获得用户密码单值
+    include('connect.php');//connect to DB
+    $name = $_POST['name'];
+    $passowrd = $_POST['password'];
 
-    if ($name && $passowrd){//如果用户名和密码都不为空
+    if ($name && $passowrd){//username and password found
              $sql = "select * from user where loginname = '$name' and password='$passowrd'";//检测数据库是否有对应的username和password的sql
              $result = mysql_query($sql);//执行sql
              $rows=mysql_num_rows($result);//
